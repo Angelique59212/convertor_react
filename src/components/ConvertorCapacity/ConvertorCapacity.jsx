@@ -17,6 +17,11 @@ export const ConvertorCapacity = () => {
   const [to, setTo] = useState("ml");
   const [result, setResult] = useState(null);
 
+  const reset = () => {
+    setValue("");
+    setResult("");
+  };
+
   const units = ["litre", "décilitre", "centilitre", "millilitre"];
   const unit = {
     l: {
@@ -95,6 +100,9 @@ export const ConvertorCapacity = () => {
       <div className="submit">
         <button className="button-submit" onClick={handleClick}>
           Convertir
+        </button>
+        <button className="button-submit" onClick={reset}>
+          Réinitialiser
         </button>
         {result !== null && (
           <div>

@@ -16,6 +16,10 @@ export const Convertor = () => {
   const [from, setFrom] = useState("m");
   const [to, setTo] = useState("mm");
   const [result, setResult] = useState(null);
+  const reset = () => {
+    setValue("");
+    setResult("");
+  };
 
   const units = ["mètre", "décimètre", "centimètre", "millimetre"];
   const unit = {
@@ -95,6 +99,9 @@ export const Convertor = () => {
       <div className="submit">
         <button className="button-submit" onClick={handleClick}>
           Convertir
+        </button>
+        <button className="button-submit" onClick={reset}>
+          Réinitialiser
         </button>
         {result !== null && (
           <div>
